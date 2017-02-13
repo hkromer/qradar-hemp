@@ -24,17 +24,30 @@
 
 ### CONFIGURATION ###
 
+## BASIC ##
+# Hostname or IP address of QRadar console, useful if qradar-hemp will
+# not be executed on the console itself
+qradarDeploymentConsole = 'localhost'
+# Delay between configuration fetching in minutes
+qradarDeploymentRefreshDelay = 15
+# Target for logs created by HeMP, useful if qradar-hemp will not be
+# executed on the console itself. In most cases should point at the
+# console
+syslogTargetCustom = ('127.0.0.1', 514)
+# Delay between data polling
+pollingTime = 180
+
+## EXTENDED ##
+# Services to be checked on all managed hosts / console / EC / FC
 servicesQRadarAll = ['hostservices', 'hostcontext', 'postgresql']
 servicesQRadarConsole = ['tomcat']
 servicesQRadarEventCollector = ['ecs-ec', 'ecs-ep']
 servicesQRadarQFlowCollector = ['qflow']
+
+# Appliance types, in case new would be added
 qradarApplianceTypeAllInOne = [21, 31]
 qradarApplianceTypeEventCollector = [15, 16]
 qradarApplianceTypeQFlowCollector = [12, 13, 17, 18]
-qradarDeploymentConsole = 'localhost'
-qradarDeploymentRefreshDelay = 15
-syslogTargetCustom = ('127.0.0.1', 514)
-pollingTime = 180
 
 ### END OF CONFIGURATION ###
 
